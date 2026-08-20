@@ -57,17 +57,19 @@
   /* Hero */
   .hero {
     background: var(--brand-black) url('images/hero-event.jpg') center 30%/cover no-repeat;
-    background-blend-mode: multiply;
     color: var(--brand-white);
-    padding: 72px 0 64px;
+    padding: 96px 0 64px;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
   .hero::before {
     content: "";
     position: absolute; inset: 0;
     background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.72) 100%);
   }
-  .hero .wrap { position: relative; z-index: 1; }
+  .hero .wrap { position: relative; z-index: 1; max-width: none; margin: 0; padding-left: 40px; padding-right: 24px; }
   .hero-offer-box {
     display: inline-flex;
     align-items: center;
@@ -127,24 +129,24 @@
 
   /* Photo bands */
   .photo-band {
-    height: 220px;
+    height: 320px;
     background-size: cover;
     background-repeat: no-repeat;
   }
-  @media (min-width: 640px) { .photo-band { height: 320px; } }
-  @media (min-width: 1024px) { .photo-band { height: 420px; } }
-  .band-kitchen { background-image: url('images/gallery-kitchen.jpg'); background-position: center 35%; }
+  @media (min-width: 640px) { .photo-band { height: 460px; } }
+  @media (min-width: 1024px) { .photo-band { height: 600px; } }
   .band-wine { background-image: url('images/gallery-wine.jpg'); background-position: center 45%; }
   .band-sliders { background-image: url('images/gallery-sliders.jpg'); background-position: center 55%; }
 
   /* Pillar images */
   .pillar-img {
     width: 100%;
-    height: 170px;
+    height: 240px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 16px;
   }
+  @media (min-width: 1024px) { .pillar-img { height: 280px; } }
 
   /* Pain */
   .pain h2, .mechanism h2, .proof h2, .offer h2, .process h2, .risk h2, .faq h2, .final-cta h2 {
@@ -276,8 +278,8 @@
   ::placeholder { color: rgba(255,255,255,.5); }
 
   /* Final CTA */
-  .final-cta { text-align: center; }
-  .final-cta p.sub { max-width: 520px; margin: 0 auto 28px; font-size: 16.5px; }
+  .final-cta { text-align: left; }
+  .final-cta p.sub { max-width: 520px; margin: 0 0 28px; font-size: 16.5px; }
 
   footer { padding: 32px 0; font-size: 13px; color: #666; text-align: center; }
   .pad-bottom-mobile { padding-bottom: 90px; }
@@ -306,9 +308,6 @@
 
 <div class="pad-bottom-mobile">
 
-<!-- PHOTO BAND: KITCHEN -->
-<div class="photo-band band-kitchen" role="img" aria-label="Food Envy chefs plating food in the kitchen"></div>
-
 <!-- MECHANISM -->
 <section class="mechanism">
   <div class="wrap">
@@ -325,7 +324,7 @@
         <p>From 30 guests to large-scale conferences, with vegan, gluten-free, dairy-free and nut-free handling built into every menu.</p>
       </div>
       <div class="pillar">
-        <img class="pillar-img" src="images/gallery-dessert.jpg" alt="Food Envy dessert tarts being served at an event" loading="lazy" style="object-position:center 55%;">
+        <img class="pillar-img" src="images/gallery-kitchen.jpg" alt="Food Envy chefs plating food in the kitchen" loading="lazy" style="object-position:center 35%;">
         <h3>On time, on brief</h3>
         <p>14 years delivering Wellington events without the last-minute scramble: the food lands the way it was promised.</p>
       </div>
